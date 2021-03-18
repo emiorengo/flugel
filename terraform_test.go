@@ -77,7 +77,7 @@ func TestTerraformHttpExample(t *testing.T) {
   expectedStatus := 200
 	actionDescription := fmt.Sprintf("Calling %s", instanceURL)
 	//Have to wait some secs to get the ALB ready
-	time.Sleep(10 * time.Second)
+	time.Sleep(20 * time.Second)
 	// Verify status 200 to the ALB
 	retry.DoWithRetry(t, actionDescription, 10, 10 * time.Second, func() (string, error) {
       statusCode, body := http_helper.HttpGet(t, instanceURL, nil)
